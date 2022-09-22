@@ -37,13 +37,22 @@ public class QueryProcessor {
             }
         }
         
-        Pattern regex2 = Pattern.compile("what is (\\d+) + (\\d+)");
+        Pattern regex2 = Pattern.compile("what is (\\d+) plus (\\d+)");
         Matcher matcher2 = regex2.matcher(query);
         boolean match2 = matcher2.find();
         if (match2) {
             int num1 = Integer.parseInt(matcher.group(1));
             int num2 = Integer.parseInt(matcher.group(2));
             return Integer.toString(num1 + num2);
+        }
+
+        Pattern regex3 = Pattern.compile("what is (\\d+) multiplied by (\\d+)");
+        Matcher matcher3 = regex3.matcher(query);
+        boolean match3 = matcher3.find();
+        if (match3) {
+            int num1 = Integer.parseInt(matcher.group(1));
+            int num2 = Integer.parseInt(matcher.group(2));
+            return Integer.toString(num1 * num2);
         }
         return "";
     }
