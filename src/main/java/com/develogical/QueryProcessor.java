@@ -24,7 +24,7 @@ public class QueryProcessor {
             return "Neeraj" ;
         }
 
-        Pattern regex = Pattern.compile("Which of the following is the largest number: (\\d),(\\d)");
+        Pattern regex = Pattern.compile("Which of the following is the largest number: (\\d+),(\\d+)");
         Matcher matcher = regex.matcher(query);
         boolean match1 = matcher.find();
         if (match1) {
@@ -37,7 +37,7 @@ public class QueryProcessor {
             }
         }
         
-        Pattern regex2 = Pattern.compile("Whats is (\\d) + (\\d)");
+        Pattern regex2 = Pattern.compile("Whats is (\\d+) + (\\d+)");
         Matcher matcher2 = regex2.matcher(query);
         boolean match2 = matcher2.find();
         if (match2) {
