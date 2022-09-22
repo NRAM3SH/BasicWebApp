@@ -1,5 +1,8 @@
 package com.develogical;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class QueryProcessor {
 
     public String process(String query) {
@@ -19,6 +22,28 @@ public class QueryProcessor {
 
         } else if (query.toLowerCase().contains("what is your name")) {
             return "Neeraj" ;
+        }
+
+        Pattern regex = Pattern.compile("Which of the following is the largest number: (\\d),(\\d)");
+        Matcher matcher = regex.matcher(query);
+        boolean match1 = matcher.find();
+        if (match1) {
+            int num1 = Integer.parseInt(matcher.group(1));
+            int num2 = Integer.parseInt(matcher.group(2));
+            if(num1 > num2){
+                return Integer.toString(num1);
+            } else {
+                return Integer.toString(num2);
+            }
+        }
+        
+        Pattern regex2 = Pattern.compile("Whats is (\\d) + (\\d)");
+        Matcher matcher2 = regex2.matcher(query);
+        boolean match2 = matcher2.find();
+        if (match2) {
+            int num1 = Integer.parseInt(matcher.group(1));
+            int num2 = Integer.parseInt(matcher.group(2));
+            return Integer.toString(num1 + num2);
         }
         return "";
     }
