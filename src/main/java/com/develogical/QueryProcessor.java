@@ -13,6 +13,6 @@ public class QueryProcessor {
                     "hypercars like the 918, and even electric cars like the Taycan." ;
 
         }
-        return "";
+        //return "";
     }
 }
