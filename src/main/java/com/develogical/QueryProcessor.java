@@ -12,7 +12,7 @@ public class QueryProcessor {
                     "high performance vehicles, from track machines like the 911 GT3 RS," + 
                     "hypercars like the 918, and even electric cars like the Taycan." ;
 
-        }
+        //}
         return "";
     }
 }
