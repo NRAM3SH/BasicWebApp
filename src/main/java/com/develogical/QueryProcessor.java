@@ -12,7 +12,14 @@ public class QueryProcessor {
                     "high performance vehicles, from track machines like the 911 GT3 RS, " + 
                     "hypercars like the 918, and even electric cars like the Taycan." ;
 
+        } else if (query.toLowerCase().contains("porsche")) {
+            return "Porsche is a German automobile manufacturer. The specialize in developing " +
+                    "high performance vehicles, from track machines like the 911 GT3 RS, " + 
+                    "hypercars like the 918, and even electric cars like the Taycan." ;
+
+        } else if (query.toLowerCase().contains("what is your name")) {
+            return "Neeraj" ;
         }
-        //return "";
+        return "";
     }
 }
